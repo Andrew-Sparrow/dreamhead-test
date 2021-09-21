@@ -1,7 +1,7 @@
 import {React} from 'react';
 import {useSelector} from 'react-redux';
 
-import RoomList from '../room-list/room-list';
+// import RoomList from '../room-list/room-list';
 import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 import Util from '../../util/util';
