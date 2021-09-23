@@ -15,13 +15,11 @@ export const URL_MARKER_DEFAULT = 'img/pin.svg';
 
 export const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
-export const cityList = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf',
+export const groupList = [
+  'All',
+  'Favorites',
+  'Family',
+  'Work',
 ];
 
 export const AuthorizationStatus = {

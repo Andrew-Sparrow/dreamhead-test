@@ -6,13 +6,13 @@ import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 import Util from '../../util/util';
 import MainEmpty from '../main-empty/main-empty';
-import {getPlaces, getActiveCityName} from '../../store/places/selectors';
+import {getPlaces, getActiveGroupName} from '../../store/places/selectors';
 
 function Main() {
-  const activeCityName = useSelector(getActiveCityName);
+  const activeGroupName = useSelector(getActiveGroupName);
   const places = useSelector(getPlaces);
 
-  const filteredPlaces = Util.getFilteredPlaces(activeCityName, places);
+  const filteredPlaces = Util.getFilteredPlaces(activeGroupName, places);
 
   return (
     <main className="page__main page__main--index">
@@ -20,13 +20,13 @@ function Main() {
       <Tabs />
       {
         filteredPlaces.length === 0
-          ? <MainEmpty activeCityName={activeCityName}/>
+          ? <MainEmpty activeGroupName={activeGroupName}/>
           : (
             <div className="cities">
               <div className="cities__places-container container">
                 <section className="cities__places places">
                   <h2 className="visually-hidden">Places</h2>
-                  <b className="places__found">{filteredPlaces.length} places to stay in {activeCityName}</b>
+                  <b className="places__found">{filteredPlaces.length} places to stay in {activeGroupName}</b>
                   {/* <RoomList places={filteredPlaces} /> */}
                 </section>
               </div>

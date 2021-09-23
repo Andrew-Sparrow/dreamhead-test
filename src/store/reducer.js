@@ -9,7 +9,7 @@ import {
 import Util from '../util/util';
 
 const initialState = {
-  activeCityName: 'Paris',
+  activeGroupName: 'All',
   places: [],
   comments: [],
   authorizationStatus: AuthorizationStatus.NO_AUTH,
