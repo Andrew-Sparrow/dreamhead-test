@@ -12,11 +12,10 @@ export const groupList = [
 ];
 
 export const groupNames = {
-  ALL: 'all',
-  FAVORITES: 'favorites',
-  FAMILY: 'family',
-  WORK: 'work'
-
+  ALL: 'All',
+  FAVORITES: 'Favorites',
+  FAMILY: 'Family',
+  WORK: 'Work'
 }
 
 export const APIRoute = {
