@@ -624,6 +624,12 @@ img {
 .contact {
   border: 5px solid #4481c3;
   margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.contact__name {
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .page__main--index-empty .cities__right-section {

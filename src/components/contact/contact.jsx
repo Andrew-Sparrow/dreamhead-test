@@ -15,11 +15,11 @@ function Contact(props) {
       className="contact"
       id={id}
     >
-      <p className="contact__name"><span className="contact__name">Name: </span>{name}</p>
-      <p className="contact__last-name"><span className="contact__name">Last Name: </span>{lastName}</p>
-      <p className="contact__last-name"><span className="contact__name">Group: </span>{group}</p>
-      <p className="contact__last-name"><span className="contact__name">Phone: </span>{phone}</p>
-      <p className="contact__last-name"><span className="contact__name">Email: </span>{email}</p>
+      <p className="contact__data">Name: <span className="contact__name">{name}</span></p>
+      <p className="contact__data">Last Name: <span className="contact__name">{lastName}</span></p>
+      <p className="contact__data">Group: <span className="contact__name">{group}</span></p>
+      <p className="contact__data">Phone: <span className="contact__name">{phone}</span></p>
+      <p className="contact__data">Email: <span className="contact__name">{email}</span></p>
     </div>
   );
 }
