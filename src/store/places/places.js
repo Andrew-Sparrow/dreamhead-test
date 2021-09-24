@@ -4,7 +4,6 @@ import Util from '../../util/util';
 import {
   changeGroup,
   loadPlaces,
-  loadNearbyPlaces,
   removeNearbyPlaces,
   changeFavorite,
   resetFavorites
@@ -24,10 +23,6 @@ const places = createReducer(initialState, (builder) => {
     .addCase(loadPlaces, (state, action) => {
       state.places = action.payload;
       state.isDataLoaded = true;
-    })
-    .addCase(loadNearbyPlaces, (state, action) => {
-      state.nearbyPlaces = action.payload;
-      state.isNearbyPlacesLoaded = true;
     })
     .addCase(removeNearbyPlaces, (state) => {
       state.nearbyPlaces = [];

@@ -5,7 +5,6 @@ import {
   showErrorCommentFormMessage,
   changeGroup,
   loadPlaces,
-  loadNearbyPlaces,
   removeNearbyPlaces,
   loadComments,
   removeComments,
@@ -419,16 +418,6 @@ describe('Actions', () => {
     };
 
     expect(loadPlaces(offers)).toEqual(expectedAction);
-  });
-
-  it('action creator for loadNearbyPlaces returns correct action', () => {
-    const testNearbyPlaces = neighbourhoodPlaces;
-    const expectedAction = {
-      type: ActionType.LOAD_NEARBY_PLACES,
-      payload: testNearbyPlaces,
-    };
-
-    expect(loadNearbyPlaces(neighbourhoodPlaces)).toEqual(expectedAction);
   });
 
   it('action creator for removeNearbyPlaces returns correct action', () => {

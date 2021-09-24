@@ -4,7 +4,6 @@ import {SortByValues} from '../../const';
 import {
   changeCity,
   loadPlaces,
-  loadNearbyPlaces,
   removeNearbyPlaces,
   changeFavorite,
   resetFavorites
@@ -283,17 +282,6 @@ describe('Reducer: places', () => {
 
     const changePlacesAction = loadPlaces(mockPlaces);
     expect(places(initialState, changePlacesAction)).toEqual(newState);
-  });
-
-  it('should add nearby places', () => {
-    const newState = Object.assign(
-      {},
-      initialState,
-      {nearbyPlaces: mockPlaces, isNearbyPlacesLoaded: true},
-    );
-
-    const changeNearbyPlacesAction = loadNearbyPlaces(mockPlaces);
-    expect(places(initialState, changeNearbyPlacesAction)).toEqual(newState);
   });
 
   it('should remove nearby places', () => {

@@ -3,7 +3,6 @@ import {
   changeIsCommentSendedSuccessfullyStatus,
   showErrorCommentFormMessage,
   loadPlaces,
-  loadNearbyPlaces,
   loadComments,
   changeLogin,
   changeFavorite,
@@ -19,15 +18,6 @@ export const fetchPlacesList = () => (dispatch, _getState, api) => (
     .then(({data}) => {
       const adaptedPlacesToClient = Util.adaptPlacesToClient(data);
       dispatch(loadPlaces(adaptedPlacesToClient));
-    })
-    .catch((err) => {})
-);
-
-export const fetchNearbyPlacesList = (id) => (dispatch, _getState, api) => (
-  api.get(`${APIRoute.HOTELS }/${ id }/nearby`)
-    .then(({data}) => {
-      const adaptedPlacesToClient = Util.adaptPlacesToClient(data);
-      dispatch(loadNearbyPlaces(adaptedPlacesToClient));
     })
     .catch((err) => {})
 );

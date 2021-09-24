@@ -3,7 +3,6 @@ import {createAction} from '@reduxjs/toolkit';
 export const ActionType = {
   CHANGE_GROUP: 'contacts/changeGroup',
   LOAD_CONTACTS: 'contacts/loadContacts',
-  LOAD_NEARBY_PLACES: 'places/loadNearbyPlaces',
   REMOVE_NEARBY_PLACES: 'places/removeNearbyPlaces',
   CHANGE_FAVORITE: 'places/isFavorite',
   LOAD_COMMENTS: 'comments/loadComments',
@@ -42,11 +41,6 @@ export const changeGroup = createAction(
 export const loadPlaces = createAction(
   ActionType.LOAD_CONTACTS,
   (places) => ({payload: places}),
-);
-
-export const loadNearbyPlaces = createAction(
-  ActionType.LOAD_NEARBY_PLACES,
-  (nearbyPlaces) => ({payload: nearbyPlaces}),
 );
 
 export const removeNearbyPlaces = createAction(ActionType.REMOVE_NEARBY_PLACES);
