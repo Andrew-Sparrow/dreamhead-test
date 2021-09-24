@@ -109,17 +109,6 @@ class Util {
     return newPlaces;
   }
 
-  static getNearbyPlacesFromCommonPlaces(nearbyPlaces, commonPlaces) {
-    const nearbyPlacesLinks = [];
-
-    nearbyPlaces.forEach((nearbyPlace) => {
-      const indexFromCommonPlaces = commonPlaces.findIndex((commonPlace) => commonPlace.id === nearbyPlace.id);
-      nearbyPlacesLinks.push(commonPlaces[indexFromCommonPlaces]);
-    });
-
-    return nearbyPlacesLinks;
-  }
-
   static resetFavoriteStates(places) {
     return places.map((place) => {
       place = {...place, isFavorite: false};
