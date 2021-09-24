@@ -6,7 +6,7 @@ import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 import Util from '../../util/util';
 import MainEmpty from '../main-empty/main-empty';
-import {getContacts, getActiveGroupName} from '../../store/places/selectors';
+import {getContacts, getActiveGroupName} from '../../store/contacts/selectors';
 
 function Main() {
   const activeGroupName = useSelector(getActiveGroupName);

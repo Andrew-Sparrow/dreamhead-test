@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {places} from './places/places';
+import {places} from './contacts/contacts';
 
 export const NameSpace = {
   CONTACTS: 'CONTACTS',
