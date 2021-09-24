@@ -15,7 +15,7 @@ const initialState = {
   activeGroupName: 'All',
 };
 
-const places = createReducer(initialState, (builder) => {
+const contacts = createReducer(initialState, (builder) => {
   builder
     .addCase(changeGroup, (state, action) => {
       state.activeGroupName = action.payload;
@@ -36,4 +36,4 @@ const places = createReducer(initialState, (builder) => {
     });
 });
 
-export {places};
+export {contacts};
