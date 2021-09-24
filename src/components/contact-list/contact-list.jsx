@@ -18,6 +18,7 @@ function ContactList(props) {
           group={contact.group}
           phone={contact.phone}
           email={contact.email}
+          avatar={contact.avatar}
         />
       ))}
     </div>

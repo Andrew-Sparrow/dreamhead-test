@@ -6,6 +6,10 @@ export default PropTypes.shape({
   'lastName': PropTypes.string.isRequired,
   "phone": PropTypes.string,
   "email": PropTypes.string,
+  "avatar": PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.oneOf([null]),
+  ]),
   "group": PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.oneOf([null]),

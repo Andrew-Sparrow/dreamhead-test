@@ -622,8 +622,19 @@ img {
 }
 
 .contact {
+  display: flex;
   border: 5px solid #4481c3;
+  border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.contact__left {
+  width: 150px;
+  background-color:rgba(56, 56, 56, 0.1);
+  background-image: "../img/default-avatar.png";
+}
+
+.contact__right {
   padding-left: 20px;
 }
 
