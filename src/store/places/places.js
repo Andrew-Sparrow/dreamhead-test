@@ -2,7 +2,7 @@ import {createReducer} from '@reduxjs/toolkit';
 import Util from '../../util/util';
 
 import {
-  changeCity,
+  changeGroup,
   loadPlaces,
   loadNearbyPlaces,
   removeNearbyPlaces,
@@ -18,7 +18,7 @@ const initialState = {
 
 const places = createReducer(initialState, (builder) => {
   builder
-    .addCase(changeCity, (state, action) => {
+    .addCase(changeGroup, (state, action) => {
       state.activeGroupName = action.payload;
     })
     .addCase(loadPlaces, (state, action) => {

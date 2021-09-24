@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {groupList} from '../../const';
-import {changeCity} from '../../store/actions';
+import {changeGroup} from '../../store/actions';
 import {getActiveGroupName} from '../../store/places/selectors';
 
 function Tabs(props) {
@@ -12,7 +12,7 @@ function Tabs(props) {
 
   const handleTabClick = (evt) => {
     evt.preventDefault();
-    dispatch(changeCity(evt.currentTarget.dataset.city));
+    dispatch(changeGroup(evt.currentTarget.dataset.city));
   };
 
   return (

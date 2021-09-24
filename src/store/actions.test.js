@@ -3,7 +3,7 @@ import {
   changeLoadingCommentProcessStatus,
   changeIsCommentSendedSuccessfullyStatus,
   showErrorCommentFormMessage,
-  changeCity,
+  changeGroup,
   loadPlaces,
   loadNearbyPlaces,
   removeNearbyPlaces,
@@ -405,16 +405,16 @@ describe('Actions', () => {
 
   it('action creator for changeCity returns correct action', () => {
     const expectedAction = {
-      type: ActionType.CHANGE_CITY,
+      type: ActionType.CHANGE_GROUP,
       payload: 'testCity',
     };
 
-    expect(changeCity('testCity')).toEqual(expectedAction);
+    expect(changeGroup('testCity')).toEqual(expectedAction);
   });
 
   it('action creator for loadPlaces returns correct action', () => {
     const expectedAction = {
-      type: ActionType.LOAD_PLACES,
+      type: ActionType.LOAD_CONTACTS,
       payload: offers,
     };
 

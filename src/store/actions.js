@@ -1,8 +1,8 @@
 import {createAction} from '@reduxjs/toolkit';
 
 export const ActionType = {
-  CHANGE_CITY: 'places/changeCity',
-  LOAD_PLACES: 'places/loadPlaces',
+  CHANGE_GROUP: 'contacts/changeGroup',
+  LOAD_CONTACTS: 'contacts/loadContacts',
   LOAD_NEARBY_PLACES: 'places/loadNearbyPlaces',
   REMOVE_NEARBY_PLACES: 'places/removeNearbyPlaces',
   CHANGE_FAVORITE: 'places/isFavorite',
@@ -34,13 +34,13 @@ export const showErrorCommentFormMessage = createAction(
   (isShowErrorMessage, errorMessageText) => ({payload: {isShowErrorMessage, errorMessageText}}),
 );
 
-export const changeCity = createAction(
-  ActionType.CHANGE_CITY,
+export const changeGroup = createAction(
+  ActionType.CHANGE_GROUP,
   (cityName) => ({payload: cityName}),
 );
 
 export const loadPlaces = createAction(
-  ActionType.LOAD_PLACES,
+  ActionType.LOAD_CONTACTS,
   (places) => ({payload: places}),
 );
 
