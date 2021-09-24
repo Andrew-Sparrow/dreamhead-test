@@ -26,7 +26,7 @@ function Main() {
               <div className="cities__places-container container">
                 <section className="cities__places places">
                   <h2 className="visually-hidden">Contacts</h2>
-                  <b className="places__found">{filteredContacts.length} places to stay in {activeGroupName}</b>
+                  <b className="places__found">{filteredContacts.length} contacts in `{activeGroupName}` group</b>
                   {/* <RoomList places={filteredPlaces} /> */}
                 </section>
               </div>
