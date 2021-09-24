@@ -1,7 +1,7 @@
 import {React} from 'react';
 import {useSelector} from 'react-redux';
 
-// import RoomList from '../room-list/room-list';
+import ContactList from '../contact-list/contact-list';
 import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 import Util from '../../util/util';
@@ -27,7 +27,7 @@ function Main() {
                 <section className="cities__places places">
                   <h2 className="visually-hidden">Contacts</h2>
                   <b className="places__found">{filteredContacts.length} contacts in `{activeGroupName}` group</b>
-                  {/* <RoomList places={filteredPlaces} /> */}
+                  <ContactList contacts={filteredContacts} />
                 </section>
               </div>
             </div>

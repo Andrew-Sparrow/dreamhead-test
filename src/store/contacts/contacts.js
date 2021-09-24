@@ -3,14 +3,14 @@ import Util from '../../util/util';
 
 import {
   changeGroup,
-  loadPlaces,
+  loadContacts,
   removeNearbyPlaces,
   changeFavorite,
   resetFavorites
 } from '../actions';
 
 const initialState = {
-  places: [],
+  contacts: [],
   isDataLoaded: false,
   activeGroupName: 'All',
 };
@@ -20,8 +20,8 @@ const contacts = createReducer(initialState, (builder) => {
     .addCase(changeGroup, (state, action) => {
       state.activeGroupName = action.payload;
     })
-    .addCase(loadPlaces, (state, action) => {
-      state.places = action.payload;
+    .addCase(loadContacts, (state, action) => {
+      state.contacts = action.payload;
       state.isDataLoaded = true;
     })
     .addCase(removeNearbyPlaces, (state) => {

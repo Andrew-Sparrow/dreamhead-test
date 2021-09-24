@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Room() {
+function Contact() {
 
   return (
     <article>
@@ -9,4 +9,4 @@ function Room() {
   );
 }
 
-export default Room;
+export default Contact;

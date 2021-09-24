@@ -2,7 +2,7 @@ import {
   changeLoadingCommentProcessStatus,
   changeIsCommentSendedSuccessfullyStatus,
   showErrorCommentFormMessage,
-  loadPlaces,
+  loadContacts,
   loadComments,
   changeLogin,
   changeFavorite,
@@ -15,7 +15,7 @@ import {APIRoute, AppRoute} from '../const';
 export const fetchContactsList = () => (dispatch, _getState, api) => (
   api.get(APIRoute.CONTACTS)
     .then(({data}) => {
-      dispatch(loadPlaces(data));
+      dispatch(loadContacts(data));
     })
     .catch((err) => {})
 );

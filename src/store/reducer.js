@@ -1,20 +1,14 @@
 import {ActionType} from './actions';
 
-import {
-  SortByValues,
-  LoginValue
-} from '../const';
-
 import Util from '../util/util';
+import {groupNames} from '../const';
 
 const initialState = {
-  activeGroupName: 'All',
-  places: [],
+  activeGroupName: groupNames.ALL,
+  contacts: [],
   comments: [],
   isDataLoaded: false,
   isCommentsLoaded: false,
-  sortBy: SortByValues.POPULAR,
-  loginValue: LoginValue.UNAUTHORIZED,
   isNearbyPlacesLoaded: false,
   isCommentSending: false,
   isShowCommentErrorMessage: false,
@@ -83,7 +77,7 @@ function reducer(state = initialState, action) {
     case ActionType.CHANGE_FAVORITE:
       return {
         ...state,
-        places: Util.getUpdatedPlaces(action.payload.id, state.places, action.payload.newPlace),
+        places: Util.getUpdatedPlaces(action.payload.id, state.contacts, action.payload.newPlace),
       };
     case ActionType.CHANGE_LOGIN:
       return {

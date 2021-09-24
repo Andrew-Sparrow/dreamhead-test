@@ -35,12 +35,12 @@ export const showErrorCommentFormMessage = createAction(
 
 export const changeGroup = createAction(
   ActionType.CHANGE_GROUP,
-  (cityName) => ({payload: cityName}),
+  (groupName) => ({payload: groupName}),
 );
 
-export const loadPlaces = createAction(
+export const loadContacts = createAction(
   ActionType.LOAD_CONTACTS,
-  (places) => ({payload: places}),
+  (contacts) => ({payload: contacts}),
 );
 
 export const removeNearbyPlaces = createAction(ActionType.REMOVE_NEARBY_PLACES);
