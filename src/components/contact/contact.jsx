@@ -1,11 +1,10 @@
 import React from 'react';
 
 function Contact() {
-
   return (
-    <article>
+    <div>
       <p>room</p>
-    </article>
+    </div>
   );
 }
 
