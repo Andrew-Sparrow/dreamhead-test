@@ -66,23 +66,6 @@ class Util {
     return adaptedCommentForClient;
   }
 
-  static getFavoritePlacesSeparatedByCity(places) {
-    const favoritePlaces = new Map();
-
-    places.forEach((place) => {
-      if (place.isFavorite) {
-        if (favoritePlaces.has(place.city.name)) {
-          favoritePlaces.get(place.city.name).push(place);
-        } else {
-          favoritePlaces.set(place.city.name, []);
-          favoritePlaces.get(place.city.name).push(place);
-        }
-      }
-    });
-
-    return favoritePlaces;
-  }
-
   static getFilteredPlaces(activeCity, places) {
     let filteredPlaces = [];
     filteredPlaces = places.filter((item) => item.city.name === activeCity);
