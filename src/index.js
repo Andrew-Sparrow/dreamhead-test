@@ -9,7 +9,6 @@ import App from './components/app/app';
 import rootReducer from './store/root-reducer';
 import {fetchContactsList} from './store/api-actions';
 import {redirect} from './store/middlewares/redirect';
-import Util from './util/util';
 import reportWebVitals from './reportWebVitals';
 
 const api = getAxiosInstance();
@@ -24,7 +23,6 @@ const store = configureStore({
     }).concat(redirect),
 });
 
-Util.getIsTokenExist(store.dispatch);
 store.dispatch(fetchContactsList());
 
 ReactDOM.render(

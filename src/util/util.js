@@ -1,7 +1,5 @@
 import nanoid from 'nanoid';
 
-import {changeLogin} from '../store/actions';
-
 class Util {
   static adaptToClient(offerFromServer) {
     const adaptedOfferForClient = Object.assign(
@@ -127,12 +125,6 @@ class Util {
       place = {...place, isFavorite: false};
       return place;
     });
-  }
-
-  static getIsTokenExist(dispatch) {
-    if (localStorage.getItem('token') !== null) {
-      dispatch(changeLogin(localStorage.getItem('login')));
-    }
   }
 }
 
