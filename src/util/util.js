@@ -37,35 +37,6 @@ class Util {
     return placesFromServer.map((place) => this.adaptToClient(place));
   }
 
-  static adaptCommentToClient(commentFromServer) {
-    const adaptedCommentForClient = Object.assign(
-      {},
-      commentFromServer,
-      {
-        comment: commentFromServer.comment,
-        date: commentFromServer.date,
-        id: commentFromServer.id,
-        rating: commentFromServer.rating,
-        user: Object.assign(
-          {},
-          commentFromServer.user,
-          {
-            avatarUrl: commentFromServer.user.avatar_url,
-            isPro: commentFromServer.user.is_pro,
-            id: commentFromServer.user.id,
-            name: commentFromServer.user.name,
-          },
-        ),
-      },
-    );
-
-    // Ненужные ключи мы удаляем
-    delete adaptedCommentForClient.user.avatar_url;
-    delete adaptedCommentForClient.user.is_pro;
-
-    return adaptedCommentForClient;
-  }
-
   static getFilteredPlaces(activeCity, places) {
     let filteredPlaces = [];
     filteredPlaces = places.filter((item) => item.city.name === activeCity);
