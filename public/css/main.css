@@ -631,7 +631,7 @@ img {
 .contact__left {
   width: 150px;
   background-color:rgba(56, 56, 56, 0.1);
-  background-image: "../img/default-avatar.png";
+  object-fit: cover;
 }
 
 .contact__right {
