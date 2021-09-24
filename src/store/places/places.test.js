@@ -3,7 +3,6 @@ import {SortByValues} from '../../const';
 
 import {
   changeCity,
-  changeSortBy,
   loadPlaces,
   loadNearbyPlaces,
   removeNearbyPlaces,
@@ -273,17 +272,6 @@ describe('Reducer: places', () => {
 
     const changeCityAction = changeCity('Copenhagen');
     expect(places(initialState, changeCityAction)).toEqual(newState);
-  });
-
-  it('should change sortBy', () => {
-    const newState = Object.assign(
-      {},
-      initialState,
-      {sortBy: SortByValues.PRICE_HIGH_TO_LOW},
-    );
-
-    const changeSortByAction = changeSortBy(SortByValues.PRICE_HIGH_TO_LOW);
-    expect(places(initialState, changeSortByAction)).toEqual(newState);
   });
 
   it('should add places', () => {

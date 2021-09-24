@@ -39,11 +39,6 @@ export const changeCity = createAction(
   (cityName) => ({payload: cityName}),
 );
 
-export const changeSortBy = createAction(
-  ActionType.CHANGE_SORT_BY,
-  (sortByValue) => ({payload: sortByValue}),
-);
-
 export const loadPlaces = createAction(
   ActionType.LOAD_PLACES,
   (places) => ({payload: places}),

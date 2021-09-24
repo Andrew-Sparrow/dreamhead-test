@@ -4,7 +4,6 @@ import {
   changeIsCommentSendedSuccessfullyStatus,
   showErrorCommentFormMessage,
   changeCity,
-  changeSortBy,
   loadPlaces,
   loadNearbyPlaces,
   removeNearbyPlaces,
@@ -411,15 +410,6 @@ describe('Actions', () => {
     };
 
     expect(changeCity('testCity')).toEqual(expectedAction);
-  });
-
-  it('action creator for changeSortBy returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.CHANGE_SORT_BY,
-      payload: 'testSortBy',
-    };
-
-    expect(changeSortBy('testSortBy')).toEqual(expectedAction);
   });
 
   it('action creator for loadPlaces returns correct action', () => {

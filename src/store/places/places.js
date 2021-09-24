@@ -3,7 +3,6 @@ import Util from '../../util/util';
 
 import {
   changeCity,
-  changeSortBy,
   loadPlaces,
   loadNearbyPlaces,
   removeNearbyPlaces,
@@ -21,9 +20,6 @@ const places = createReducer(initialState, (builder) => {
   builder
     .addCase(changeCity, (state, action) => {
       state.activeGroupName = action.payload;
-    })
-    .addCase(changeSortBy, (state, action) => {
-      state.sortBy = action.payload;
     })
     .addCase(loadPlaces, (state, action) => {
       state.places = action.payload;
