@@ -12,10 +12,10 @@ export const groupList = [
 ];
 
 export const groupNames = {
-  ALL: 'All',
-  FAVORITES: 'Favorites',
-  FAMILY: 'Family',
-  WORK: 'Work'
+  ALL: 'all',
+  FAVORITES: 'favorites',
+  FAMILY: 'family',
+  WORK: 'work'
 
 }
 
