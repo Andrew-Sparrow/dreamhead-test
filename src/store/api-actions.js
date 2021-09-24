@@ -13,7 +13,7 @@ import {
 import {APIRoute, AppRoute} from '../const';
 import Util from '../util/util';
 
-export const fetchPlacesList = () => (dispatch, _getState, api) => (
+export const fetchContactsList = () => (dispatch, _getState, api) => (
   api.get(APIRoute.HOTELS)
     .then(({data}) => {
       const adaptedPlacesToClient = Util.adaptPlacesToClient(data);

@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import {getAxiosInstance} from './services/api';
 import App from './components/app/app';
 import rootReducer from './store/root-reducer';
-import {fetchPlacesList} from './store/api-actions';
+import {fetchContactsList} from './store/api-actions';
 import {redirect} from './store/middlewares/redirect';
 import Util from './util/util';
 import reportWebVitals from './reportWebVitals';
@@ -25,7 +25,7 @@ const store = configureStore({
 });
 
 Util.getIsTokenExist(store.dispatch);
-store.dispatch(fetchPlacesList());
+store.dispatch(fetchContactsList());
 
 ReactDOM.render(
   <React.StrictMode>
