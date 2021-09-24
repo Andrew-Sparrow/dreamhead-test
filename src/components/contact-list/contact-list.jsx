@@ -5,7 +5,7 @@ import Contact from '../contact/contact';
 import contactProp from '../contact/contact.prop';
 
 function ContactList(props) {
-  const {contacts, onListItemHover} = props;
+  const {contacts} = props;
 
   return (
     <div className="cities__places-list places__list tabs__content">
@@ -13,14 +13,11 @@ function ContactList(props) {
         <Contact
           key={contact.id}
           id={contact.id}
-          price={contact.price}
-          onListItemHover={onListItemHover}
-          title={contact.title}
-          isPremium={contact.isPremium}
-          isFavorite={contact.isFavorite}
-          type={contact.type}
-          rating={contact.rating}
-          previewImage={contact.previewImage}
+          name={contact.name}
+          lastName={contact.lastName}
+          group={contact.group}
+          phone={contact.phone}
+          email={contact.email}
         />
       ))}
     </div>
@@ -28,7 +25,7 @@ function ContactList(props) {
 }
 
 ContactList.propTypes = {
-  contact: PropTypes.arrayOf(contactProp),
+  contacts: PropTypes.arrayOf(contactProp),
   onListItemHover: PropTypes.func,
 };
 
