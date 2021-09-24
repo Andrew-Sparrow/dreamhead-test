@@ -1,4 +1,5 @@
 import nanoid from 'nanoid';
+import {groupNames} from '../const';
 
 class Util {
   static adaptToClient(offerFromServer) {
@@ -37,10 +38,13 @@ class Util {
     return placesFromServer.map((place) => this.adaptToClient(place));
   }
 
-  static getFilteredPlaces(activeCity, places) {
-    let filteredPlaces = [];
-    filteredPlaces = places.filter((item) => item.city.name === activeCity);
-    return filteredPlaces;
+  static getFilteredContacts(activeGroup, contacts) {
+    let filteredContacts = [];
+    if (activeGroup === groupNames.ALL) {
+      return contacts;
+    }
+    filteredContacts = contacts.filter((item) => item.group === activeGroup);
+    return filteredContacts;
   }
 
   static formatDate = (dateString) => {

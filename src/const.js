@@ -11,8 +11,16 @@ export const groupList = [
   'Work',
 ];
 
+export const groupNames = {
+  ALL: 'All',
+  FAVORITES: 'Favorites',
+  FAMILY: 'Family',
+  WORK: 'Work'
+
+}
+
 export const APIRoute = {
-  HOTELS: '/hotels',
+  CONTACTS: '/contacts',
   FAVORITE: '/favorite',
   COMMENTS: '/comments',
   LOGIN: '/login',

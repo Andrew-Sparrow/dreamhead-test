@@ -12,7 +12,7 @@ function Main() {
   const activeGroupName = useSelector(getActiveGroupName);
   const contacts = useSelector(getContacts);
 
-  const filteredContacts = Util.getFilteredPlaces(activeGroupName, contacts);
+  const filteredContacts = Util.getFilteredContacts(activeGroupName, contacts);
 
   return (
     <main className="page__main page__main--index">

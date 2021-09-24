@@ -11,13 +11,11 @@ import {
 } from './actions';
 
 import {APIRoute, AppRoute} from '../const';
-import Util from '../util/util';
 
 export const fetchContactsList = () => (dispatch, _getState, api) => (
-  api.get(APIRoute.HOTELS)
+  api.get(APIRoute.CONTACTS)
     .then(({data}) => {
-      const adaptedPlacesToClient = Util.adaptPlacesToClient(data);
-      dispatch(loadPlaces(adaptedPlacesToClient));
+      dispatch(loadPlaces(data));
     })
     .catch((err) => {})
 );
