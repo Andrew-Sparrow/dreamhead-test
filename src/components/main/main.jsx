@@ -6,11 +6,11 @@ import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 import Util from '../../util/util';
 import MainEmpty from '../main-empty/main-empty';
-import {getPlaces, getActiveGroupName} from '../../store/places/selectors';
+import {getContacts, getActiveGroupName} from '../../store/places/selectors';
 
 function Main() {
   const activeGroupName = useSelector(getActiveGroupName);
-  const places = useSelector(getPlaces);
+  const places = useSelector(getContacts);
 
   const filteredPlaces = Util.getFilteredPlaces(activeGroupName, places);
 

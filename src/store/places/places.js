@@ -1,5 +1,4 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {SortByValues} from '../../const';
 import Util from '../../util/util';
 
 import {
@@ -14,17 +13,14 @@ import {
 
 const initialState = {
   places: [],
-  sortBy: SortByValues.POPULAR,
   isDataLoaded: false,
-  activeCityName: 'Paris',
-  isNearbyPlacesLoaded: false,
-  nearbyPlaces: [],
+  activeGroupName: 'All',
 };
 
 const places = createReducer(initialState, (builder) => {
   builder
     .addCase(changeCity, (state, action) => {
-      state.activeCityName = action.payload;
+      state.activeGroupName = action.payload;
     })
     .addCase(changeSortBy, (state, action) => {
       state.sortBy = action.payload;

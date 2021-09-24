@@ -10,15 +10,12 @@ import {
   removeNearbyPlaces,
   loadComments,
   removeComments,
-  changeAuthorizationStatus,
   changeLogin,
   changeFavorite,
   logout,
   resetFavorites,
   redirectToRoute
 } from './actions';
-
-import {AuthorizationStatus} from '../const';
 
 const offers = [
   {
@@ -464,15 +461,6 @@ describe('Actions', () => {
     const expectedAction = {type: ActionType.REMOVE_COMMENTS};
 
     expect(removeComments()).toEqual(expectedAction);
-  });
-
-  it('action creator for changeAuthorizationStatus returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.CHANGE_AUTHORIZATION_STATUS,
-      payload: AuthorizationStatus.AUTH,
-    };
-
-    expect(changeAuthorizationStatus(AuthorizationStatus.AUTH)).toEqual(expectedAction);
   });
 
   it('action creator for changeLogin returns correct action', () => {

@@ -1,13 +1,6 @@
 import nanoid from 'nanoid';
 
-import {
-  MAX_RATING,
-  MAX_PERCENT,
-  SortByValues
-} from '../const';
-
-import {changeLogin, changeAuthorizationStatus} from '../store/actions';
-import {AuthorizationStatus} from '../const';
+import {changeLogin} from '../store/actions';
 
 class Util {
   static adaptToClient(offerFromServer) {
@@ -110,35 +103,6 @@ class Util {
     return generatedIdList;
   }
 
-  static getWidthByRating(rating) {
-    const roundedRating = Math.round(rating);
-    const widthValue = (MAX_PERCENT * roundedRating) / MAX_RATING;
-    return widthValue;
-  }
-
-  static getSortedPlaces = (sortTypeValue, places) => {
-    const clonedPlaces = places.slice();
-
-    const _sortByPriceFromLowToHigh = (hotels) => hotels.sort((firstPlace, secondPlace) => firstPlace.price - secondPlace.price);
-
-    const _sortByPriceFromHighToLow = (hotels) => hotels.sort((firstPlace, secondPlace) => secondPlace.price - firstPlace.price);
-
-    const _sortByRating = (hotels) => hotels.sort((firstPlace, secondPlace) => secondPlace.rating - firstPlace.rating);
-
-    switch (sortTypeValue) {
-      case SortByValues.POPULAR:
-        return clonedPlaces;
-      case SortByValues.PRICE_LOW_TO_HIGH:
-        return _sortByPriceFromLowToHigh(places);
-      case SortByValues.PRICE_HIGH_TO_LOW:
-        return _sortByPriceFromHighToLow(places);
-      case SortByValues.TOP_RATED_FIRST:
-        return _sortByRating(places);
-      default:
-        return clonedPlaces;
-    }
-  }
-
   static getUpdatedPlaces(id, places, newPlace) {
     const adaptedPlaceForClient = this.adaptToClient(newPlace);
     const newPlaces = [...places];
@@ -168,7 +132,6 @@ class Util {
   static getIsTokenExist(dispatch) {
     if (localStorage.getItem('token') !== null) {
       dispatch(changeLogin(localStorage.getItem('login')));
-      dispatch(changeAuthorizationStatus(AuthorizationStatus.AUTH));
     }
   }
 }

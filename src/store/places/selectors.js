@@ -1,5 +1,5 @@
 import {NameSpace} from '../root-reducer';
 
-export const getPlaces = (state) => state[NameSpace.PLACES].places;
-export const getIsDataLoaded = (state) => state[NameSpace.PLACES].isDataLoaded;
-export const getActiveGroupName = (state) => state[NameSpace.PLACES].activeGroupName;
+export const getContacts = (state) => state[NameSpace.CONTACTS].places;
+export const getIsDataLoaded = (state) => state[NameSpace.CONTACTS].isDataLoaded;
+export const getActiveGroupName = (state) => state[NameSpace.CONTACTS].activeGroupName;

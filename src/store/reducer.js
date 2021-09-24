@@ -1,7 +1,6 @@
 import {ActionType} from './actions';
 
 import {
-  AuthorizationStatus,
   SortByValues,
   LoginValue
 } from '../const';
@@ -12,7 +11,6 @@ const initialState = {
   activeGroupName: 'All',
   places: [],
   comments: [],
-  authorizationStatus: AuthorizationStatus.NO_AUTH,
   isDataLoaded: false,
   isCommentsLoaded: false,
   sortBy: SortByValues.POPULAR,
@@ -88,11 +86,6 @@ function reducer(state = initialState, action) {
         comments: [],
         isCommentsLoaded: false,
       };
-    case ActionType.CHANGE_AUTHORIZATION_STATUS:
-      return {
-        ...state,
-        authorizationStatus: action.payload,
-      };
     case ActionType.CHANGE_FAVORITE:
       return {
         ...state,
@@ -102,12 +95,6 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         loginValue: action.payload,
-      };
-    case ActionType.LOGOUT:
-      return {
-        ...state,
-        authorizationStatus: AuthorizationStatus.NO_AUTH,
-        loginValue: LoginValue.UNAUTHORIZED,
       };
     default:
       return state;

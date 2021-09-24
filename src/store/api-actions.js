@@ -5,14 +5,13 @@ import {
   loadPlaces,
   loadNearbyPlaces,
   loadComments,
-  changeAuthorizationStatus,
   changeLogin,
   changeFavorite,
   logout as userLogout,
   redirectToRoute
 } from './actions';
 
-import {AuthorizationStatus, APIRoute, AppRoute} from '../const';
+import {APIRoute, AppRoute} from '../const';
 import Util from '../util/util';
 
 export const fetchPlacesList = () => (dispatch, _getState, api) => (
@@ -57,7 +56,6 @@ export const login = ({login: email, password}) => (dispatch, _getState, api) =>
       localStorage.setItem('token', info.data.token);
       localStorage.setItem('login', info.data.email);
       dispatch(changeLogin(info.data.email));
-      dispatch(changeAuthorizationStatus(AuthorizationStatus.AUTH));
       dispatch(redirectToRoute(AppRoute.MAIN));
     })
     .catch((err) => {});

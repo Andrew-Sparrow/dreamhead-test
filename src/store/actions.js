@@ -2,14 +2,12 @@ import {createAction} from '@reduxjs/toolkit';
 
 export const ActionType = {
   CHANGE_CITY: 'places/changeCity',
-  CHANGE_SORT_BY: 'places/sortBy',
   LOAD_PLACES: 'places/loadPlaces',
   LOAD_NEARBY_PLACES: 'places/loadNearbyPlaces',
   REMOVE_NEARBY_PLACES: 'places/removeNearbyPlaces',
   CHANGE_FAVORITE: 'places/isFavorite',
   LOAD_COMMENTS: 'comments/loadComments',
   REMOVE_COMMENTS: 'comments/removeComments',
-  CHANGE_AUTHORIZATION_STATUS: 'user/changeAuthorizationStatus',
   CHANGE_LOGIN: 'user/changeLogin',
   LOGOUT: 'user/logout',
   CHANGE_LOADING_COMMENT_PROCESS_STATUS: 'comment/changeLoadingCommentProcessStatus',
@@ -64,11 +62,6 @@ export const loadComments = createAction(
 );
 
 export const removeComments = createAction(ActionType.REMOVE_COMMENTS);
-
-export const changeAuthorizationStatus = createAction(
-  ActionType.CHANGE_AUTHORIZATION_STATUS,
-  (status) => ({payload: status}),
-);
 
 export const changeLogin = createAction(
   ActionType.CHANGE_LOGIN,
