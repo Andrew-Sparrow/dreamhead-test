@@ -85,10 +85,9 @@ class Util {
   }
 
   static getUpdatedPlaces(id, places, newPlace) {
-    const adaptedPlaceForClient = this.adaptToClient(newPlace);
     const newPlaces = [...places];
     const index = newPlaces.findIndex((place) => place.id === id);
-    newPlaces[index].isFavorite = adaptedPlaceForClient.isFavorite;
+    newPlaces[index].isFavorite = newPlace.isFavorite;
     return newPlaces;
   }
 
