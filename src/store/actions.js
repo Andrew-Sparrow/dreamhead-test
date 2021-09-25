@@ -12,20 +12,9 @@ export const ActionType = {
   SHOW_COMMENT_ERROR_MESSAGE: 'comment/showErrorCommentFormMessage',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
-  CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS: 'comment/changeCommentSendedSuccessfulyStatus',
   RESET_FAVORITES: 'places/resetFavorites',
   REDIRECT_TO_ROUTE: 'places/redirectToRoute',
 };
-
-export const changeIsCommentSendedSuccessfullyStatus = createAction(
-  ActionType.CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS,
-  (isCommentSendedSuccessfully) => ({payload: isCommentSendedSuccessfully}),
-);
-
-export const showErrorCommentFormMessage = createAction(
-  ActionType.SHOW_COMMENT_ERROR_MESSAGE,
-  (isShowErrorMessage, errorMessageText) => ({payload: {isShowErrorMessage, errorMessageText}}),
-);
 
 export const changeGroup = createAction(
   ActionType.CHANGE_GROUP,

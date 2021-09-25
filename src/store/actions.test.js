@@ -375,15 +375,6 @@ export const placeHotel =
 };
 
 describe('Actions', () => {
-  it('action creator for changeIsCommentSendedSuccessfullyStatus returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS,
-      payload: true,
-    };
-
-    expect(changeIsCommentSendedSuccessfullyStatus(true)).toEqual(expectedAction);
-  });
-
   it('action creator for showErrorCommentFormMessage returns correct action', () => {
     const expectedAction = {
       type: ActionType.SHOW_COMMENT_ERROR_MESSAGE,

@@ -19,12 +19,6 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case ActionType.CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS: {
-      return {
-        ...state,
-        isCommentFormSendedSuccessfully: action.payload,
-      };
-    }
     case ActionType.SHOW_COMMENT_ERROR_MESSAGE: {
       return {
         ...state,
