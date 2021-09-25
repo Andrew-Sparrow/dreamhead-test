@@ -9,7 +9,6 @@ export const ActionType = {
   REMOVE_COMMENTS: 'comments/removeComments',
   CHANGE_LOGIN: 'user/changeLogin',
   LOGOUT: 'user/logout',
-  CHANGE_LOADING_COMMENT_PROCESS_STATUS: 'comment/changeLoadingCommentProcessStatus',
   SHOW_COMMENT_ERROR_MESSAGE: 'comment/showErrorCommentFormMessage',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
@@ -17,11 +16,6 @@ export const ActionType = {
   RESET_FAVORITES: 'places/resetFavorites',
   REDIRECT_TO_ROUTE: 'places/redirectToRoute',
 };
-
-export const changeLoadingCommentProcessStatus = createAction(
-  ActionType.CHANGE_LOADING_COMMENT_PROCESS_STATUS,
-  (isLoading) => ({payload: isLoading}),
-);
 
 export const changeIsCommentSendedSuccessfullyStatus = createAction(
   ActionType.CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS,

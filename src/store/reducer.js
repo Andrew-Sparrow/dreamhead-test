@@ -19,12 +19,6 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case ActionType.CHANGE_LOADING_COMMENT_PROCESS_STATUS: {
-      return {
-        ...state,
-        isCommentSending: action.payload,
-      };
-    }
     case ActionType.CHANGE_COMMENT_SENDED_SUCCESSFULLY_STATUS: {
       return {
         ...state,

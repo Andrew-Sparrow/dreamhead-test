@@ -1,7 +1,4 @@
 import {
-  changeLoadingCommentProcessStatus,
-  changeIsCommentSendedSuccessfullyStatus,
-  showErrorCommentFormMessage,
   loadContacts,
   loadComments,
   changeLogin,
@@ -47,29 +44,6 @@ export const login = ({login: email, password}) => (dispatch, _getState, api) =>
       dispatch(redirectToRoute(AppRoute.MAIN));
     })
     .catch((err) => {});
-};
-
-export const sendComment = (id, comment, rating) => (dispatch, _getState, api) => {
-  dispatch(changeLoadingCommentProcessStatus(true));
-
-  api.post(`${APIRoute.COMMENTS}/${id}`, {comment, rating})
-    .then((info) => {
-      dispatch(loadComments(info.data));
-      dispatch(changeLoadingCommentProcessStatus(false));
-      dispatch(showErrorCommentFormMessage(false));
-      dispatch(changeIsCommentSendedSuccessfullyStatus(true));
-      /*
-      this additional bottom line was made for clean up a comment form
-      and establish "isCommentFormSendedSuccessfully" to "false"
-      to fix problem with save text in comment form after network error
-       */
-      dispatch(changeIsCommentSendedSuccessfullyStatus(false));
-    })
-    .catch((err) => {
-      dispatch(showErrorCommentFormMessage(true, err.message));
-      dispatch(changeLoadingCommentProcessStatus(false));
-      dispatch(changeIsCommentSendedSuccessfullyStatus(false));
-    });
 };
 
 export const logout = () => (dispatch, _getState, api) => {
