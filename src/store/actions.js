@@ -9,7 +9,6 @@ export const ActionType = {
   REMOVE_COMMENTS: 'comments/removeComments',
   CHANGE_LOGIN: 'user/changeLogin',
   LOGOUT: 'user/logout',
-  SHOW_COMMENT_ERROR_MESSAGE: 'comment/showErrorCommentFormMessage',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
   RESET_FAVORITES: 'places/resetFavorites',

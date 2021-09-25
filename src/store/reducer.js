@@ -19,13 +19,6 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case ActionType.SHOW_COMMENT_ERROR_MESSAGE: {
-      return {
-        ...state,
-        isShowCommentErrorMessage: action.payload.isShowErrorMessage,
-        commentErrorMessage: action.payload.errorMessageText,
-      };
-    }
     case ActionType.CHANGE_CITY: {
       return {
         ...state,

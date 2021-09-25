@@ -375,15 +375,6 @@ export const placeHotel =
 };
 
 describe('Actions', () => {
-  it('action creator for showErrorCommentFormMessage returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.SHOW_COMMENT_ERROR_MESSAGE,
-      payload: {isShowErrorMessage: true, errorMessageText: 'test'},
-    };
-
-    expect(showErrorCommentFormMessage(true, 'test')).toEqual(expectedAction);
-  });
-
   it('action creator for changeCity returns correct action', () => {
     const expectedAction = {
       type: ActionType.CHANGE_GROUP,
