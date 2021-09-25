@@ -393,12 +393,6 @@ describe('Actions', () => {
     expect(loadPlaces(offers)).toEqual(expectedAction);
   });
 
-  it('action creator for removeNearbyPlaces returns correct action', () => {
-    const expectedAction = {type: ActionType.REMOVE_NEARBY_PLACES};
-
-    expect(removeNearbyPlaces()).toEqual(expectedAction);
-  });
-
   it('action creator for loadComments returns correct action', () => {
     const testComments = mockComments;
     const expectedAction = {

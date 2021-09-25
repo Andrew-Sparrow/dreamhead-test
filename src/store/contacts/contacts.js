@@ -4,7 +4,6 @@ import Util from '../../util/util';
 import {
   changeGroup,
   loadContacts,
-  removeNearbyPlaces,
   changeFavorite,
   resetFavorites
 } from '../actions';
@@ -23,10 +22,6 @@ const contacts = createReducer(initialState, (builder) => {
     .addCase(loadContacts, (state, action) => {
       state.contacts = action.payload;
       state.isDataLoaded = true;
-    })
-    .addCase(removeNearbyPlaces, (state) => {
-      state.nearbyPlaces = [];
-      state.isNearbyPlacesLoaded = false;
     })
     .addCase(changeFavorite, (state, action) => {
       state.places = Util.getUpdatedPlaces(action.payload.id, state.places, action.payload.newPlace);

@@ -37,12 +37,6 @@ function reducer(state = initialState, action) {
         places: action.payload,
         isDataLoaded: true,
       };
-    case ActionType.REMOVE_NEARBY_PLACES:
-      return {
-        ...state,
-        nearbyPlaces: [],
-        isNearbyPlacesLoaded: false,
-      };
     case ActionType.LOAD_COMMENTS:
       return {
         ...state,
