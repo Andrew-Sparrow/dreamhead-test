@@ -2,9 +2,7 @@ import {
   ActionType,
   changeGroup,
   loadPlaces,
-  removeComments,
   changeFavorite,
-  logout,
   resetFavorites,
   redirectToRoute
 } from './actions';
@@ -394,12 +392,6 @@ describe('Actions', () => {
     };
 
     expect(changeFavorite(1, placeHotel)).toEqual(expectedAction);
-  });
-
-  it('action creator for logout returns correct action', () => {
-    const expectedAction = {type: ActionType.LOGOUT};
-
-    expect(logout()).toEqual(expectedAction);
   });
 
   it('action creator for resetFavorites returns correct action', () => {

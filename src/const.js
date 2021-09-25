@@ -23,5 +23,4 @@ export const APIRoute = {
   CONTACTS: '/contacts',
   FAVORITE: '/favorite',
   COMMENTS: '/comments',
-  LOGOUT: '/logout',
 };

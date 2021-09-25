@@ -4,7 +4,6 @@ export const ActionType = {
   CHANGE_GROUP: 'contacts/changeGroup',
   LOAD_CONTACTS: 'contacts/loadContacts',
   CHANGE_FAVORITE: 'places/isFavorite',
-  LOGOUT: 'user/logout',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
   RESET_FAVORITES: 'places/resetFavorites',
@@ -25,8 +24,6 @@ export const changeFavorite = createAction(
   ActionType.CHANGE_FAVORITE,
   (id, newPlace) => ({payload: {id, newPlace}}),
 );
-
-export const logout = createAction(ActionType.LOGOUT);
 
 export const resetFavorites = createAction(
   ActionType.RESET_FAVORITES,
