@@ -13,7 +13,7 @@ function Contact(props) {
   } = props;
 
   return (
-    <div
+    <li
       className="contact"
       id={id}
     >
@@ -25,7 +25,7 @@ function Contact(props) {
         <p className="contact__data">Phone: <span className="contact__name">{phone}</span></p>
         <p className="contact__data">Email: <span className="contact__name">{email}</span></p>
       </div>
-    </div>
+    </li>
   );
 }
 

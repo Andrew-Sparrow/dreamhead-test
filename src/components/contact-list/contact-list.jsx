@@ -8,7 +8,7 @@ function ContactList(props) {
   const {contacts} = props;
 
   return (
-    <div className="cities__places-list places__list tabs__content">
+    <ul className="cities__places-list places__list tabs__content">
       {contacts.map((contact) => (
         <Contact
           key={contact.id}
@@ -21,7 +21,7 @@ function ContactList(props) {
           avatar={contact.avatar}
         />
       ))}
-    </div>
+    </ul>
   );
 }
 
