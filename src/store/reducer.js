@@ -54,11 +54,6 @@ function reducer(state = initialState, action) {
         ...state,
         places: Util.getUpdatedPlaces(action.payload.id, state.contacts, action.payload.newPlace),
       };
-    case ActionType.CHANGE_LOGIN:
-      return {
-        ...state,
-        loginValue: action.payload,
-      };
     default:
       return state;
   }

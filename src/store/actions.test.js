@@ -1,14 +1,8 @@
 import {
   ActionType,
-  changeLoadingCommentProcessStatus,
-  changeIsCommentSendedSuccessfullyStatus,
-  showErrorCommentFormMessage,
   changeGroup,
   loadPlaces,
-  removeNearbyPlaces,
-  loadComments,
   removeComments,
-  changeLogin,
   changeFavorite,
   logout,
   resetFavorites,
@@ -393,29 +387,10 @@ describe('Actions', () => {
     expect(loadPlaces(offers)).toEqual(expectedAction);
   });
 
-  it('action creator for loadComments returns correct action', () => {
-    const testComments = mockComments;
-    const expectedAction = {
-      type: ActionType.LOAD_COMMENTS,
-      payload: testComments,
-    };
-
-    expect(loadComments(mockComments)).toEqual(expectedAction);
-  });
-
   it('action creator for removeComments returns correct action', () => {
     const expectedAction = {type: ActionType.REMOVE_COMMENTS};
 
     expect(removeComments()).toEqual(expectedAction);
-  });
-
-  it('action creator for changeLogin returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.CHANGE_LOGIN,
-      payload: 'testLogin',
-    };
-
-    expect(changeLogin('testLogin')).toEqual(expectedAction);
   });
 
   it('action creator for changeFavorite returns correct action', () => {
