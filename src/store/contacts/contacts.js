@@ -5,7 +5,6 @@ import {
   changeGroup,
   loadContacts,
   changeFavorite,
-  resetFavorites
 } from '../actions';
 
 const initialState = {
@@ -26,9 +25,6 @@ const contacts = createReducer(initialState, (builder) => {
     .addCase(changeFavorite, (state, action) => {
       state.places = Util.getUpdatedContacts(action.payload.id, state.places, action.payload.newPlace);
     })
-    .addCase(resetFavorites, (state, action) => {
-      state.places = Util.resetFavoriteStates(action.payload);
-    });
 });
 
 export {contacts};
