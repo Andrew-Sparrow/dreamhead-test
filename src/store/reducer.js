@@ -46,7 +46,7 @@ function reducer(state = initialState, action) {
     case ActionType.CHANGE_FAVORITE:
       return {
         ...state,
-        places: Util.getUpdatedPlaces(action.payload.id, state.contacts, action.payload.newPlace),
+        places: Util.getUpdatedContacts(action.payload.id, state.contacts, action.payload.newPlace),
       };
     default:
       return state;

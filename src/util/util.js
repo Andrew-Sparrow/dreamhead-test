@@ -59,11 +59,11 @@ class Util {
     return generatedIdList;
   }
 
-  static getUpdatedPlaces(id, places, newPlace) {
-    const newPlaces = [...places];
-    const index = newPlaces.findIndex((place) => place.id === id);
-    newPlaces[index].isFavorite = newPlace.isFavorite;
-    return newPlaces;
+  static getUpdatedContacts(id, contacts, newContact) {
+    const newContacts = [...contacts];
+    const index = newContacts.findIndex((contact) => contact.id === id);
+    newContacts[index].isFavorite = newContact.isFavorite;
+    return newContacts;
   }
 
   static resetFavoriteStates(places) {

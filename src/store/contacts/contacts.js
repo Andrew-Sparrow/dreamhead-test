@@ -24,7 +24,7 @@ const contacts = createReducer(initialState, (builder) => {
       state.isDataLoaded = true;
     })
     .addCase(changeFavorite, (state, action) => {
-      state.places = Util.getUpdatedPlaces(action.payload.id, state.places, action.payload.newPlace);
+      state.places = Util.getUpdatedContacts(action.payload.id, state.places, action.payload.newPlace);
     })
     .addCase(resetFavorites, (state, action) => {
       state.places = Util.resetFavoriteStates(action.payload);
