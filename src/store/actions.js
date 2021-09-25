@@ -4,7 +4,6 @@ export const ActionType = {
   CHANGE_GROUP: 'contacts/changeGroup',
   LOAD_CONTACTS: 'contacts/loadContacts',
   CHANGE_FAVORITE: 'places/isFavorite',
-  REMOVE_COMMENTS: 'comments/removeComments',
   LOGOUT: 'user/logout',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
@@ -21,8 +20,6 @@ export const loadContacts = createAction(
   ActionType.LOAD_CONTACTS,
   (contacts) => ({payload: contacts}),
 );
-
-export const removeComments = createAction(ActionType.REMOVE_COMMENTS);
 
 export const changeFavorite = createAction(
   ActionType.CHANGE_FAVORITE,

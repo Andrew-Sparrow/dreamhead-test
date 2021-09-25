@@ -43,12 +43,6 @@ function reducer(state = initialState, action) {
         comments: action.payload,
         isCommentsLoaded: true,
       };
-    case ActionType.REMOVE_COMMENTS:
-      return {
-        ...state,
-        comments: [],
-        isCommentsLoaded: false,
-      };
     case ActionType.CHANGE_FAVORITE:
       return {
         ...state,

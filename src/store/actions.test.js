@@ -387,12 +387,6 @@ describe('Actions', () => {
     expect(loadPlaces(offers)).toEqual(expectedAction);
   });
 
-  it('action creator for removeComments returns correct action', () => {
-    const expectedAction = {type: ActionType.REMOVE_COMMENTS};
-
-    expect(removeComments()).toEqual(expectedAction);
-  });
-
   it('action creator for changeFavorite returns correct action', () => {
     const expectedAction = {
       type: ActionType.CHANGE_FAVORITE,
