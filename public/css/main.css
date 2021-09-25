@@ -435,6 +435,12 @@ img {
   font-size: 20px;
 }
 
+.header__title {
+  font-size: 58px;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
 .header__logo-link {
   margin-bottom: 15px
 }
@@ -623,6 +629,7 @@ img {
 
 .contact {
   display: flex;
+  min-width: 330px;
   border: 5px solid #4481c3;
   border-radius: 10px;
   margin-bottom: 20px;
