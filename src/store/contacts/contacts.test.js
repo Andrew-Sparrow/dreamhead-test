@@ -6,7 +6,6 @@ import {
   loadPlaces,
   removeNearbyPlaces,
   changeFavorite,
-  resetFavorites
 } from '../actions';
 
 const mockPlaces = [
@@ -354,39 +353,6 @@ describe('Reducer: places', () => {
 
     const changeFavoriteAction = changeFavorite(1, placeFromServer);
 
-    expect(places(oldState, changeFavoriteAction)).toEqual(newState);
-  });
-
-  it('should reset all favorites', () => {
-    const initialPlace = {
-      'id': 1,
-      'price': 220,
-      'bedrooms': 3,
-      'type': 'apartment',
-      'title': 'Beautiful & luxurious studio at great location',
-      'city': {
-        'name': 'Amsterdam',
-        'location': {},
-      },
-      'description': 'A qu unique lightness of Amsterdam.',
-      'goods': [],
-      'host': {},
-      'images': ['img/1.png', 'img/2.png'],
-      'isFavorite': true,
-      'isPremium': true,
-      'location': {},
-      'maxAdults': 4,
-      'previewImage': 'img/1.png',
-      'rating': 4.0,
-    };
-
-    const oldPlaces = [initialPlace];
-    const oldState = Object.assign({}, initialState, {places: oldPlaces});
-
-    const newPlaces = [(Object.assign({}, initialPlace, {isFavorite: false}))];
-    const newState = Object.assign({}, initialState, {places: newPlaces});
-
-    const changeFavoriteAction = resetFavorites(oldPlaces);
     expect(places(oldState, changeFavoriteAction)).toEqual(newState);
   });
 });

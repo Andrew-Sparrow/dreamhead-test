@@ -3,7 +3,6 @@ import {
   changeGroup,
   loadPlaces,
   changeFavorite,
-  resetFavorites,
   redirectToRoute
 } from './actions';
 
@@ -392,15 +391,6 @@ describe('Actions', () => {
     };
 
     expect(changeFavorite(1, placeHotel)).toEqual(expectedAction);
-  });
-
-  it('action creator for resetFavorites returns correct action', () => {
-    const expectedAction = {
-      type: ActionType.RESET_FAVORITES,
-      payload: [],
-    };
-
-    expect(resetFavorites([])).toEqual(expectedAction);
   });
 
   it('action creator for redirectToRoute returns correct action', () => {

@@ -6,7 +6,6 @@ export const ActionType = {
   CHANGE_FAVORITE: 'places/isFavorite',
   SEND_COMMENT: 'comment/sendComment',
   SEND_COMMENT_RATING: 'comment/sendCommentRating',
-  RESET_FAVORITES: 'places/resetFavorites',
   REDIRECT_TO_ROUTE: 'places/redirectToRoute',
 };
 
@@ -23,11 +22,6 @@ export const loadContacts = createAction(
 export const changeFavorite = createAction(
   ActionType.CHANGE_FAVORITE,
   (id, newPlace) => ({payload: {id, newPlace}}),
-);
-
-export const resetFavorites = createAction(
-  ActionType.RESET_FAVORITES,
-  (places) => ({payload: places}),
 );
 
 export const redirectToRoute = createAction(
