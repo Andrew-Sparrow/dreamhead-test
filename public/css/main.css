@@ -2037,14 +2037,26 @@ img {
   outline: none;
   cursor: pointer;
 }
+.pagination li a:hover {
+  background-color: #69a4e2;
+  color: #fff;
+}
 .pagination > .active > a,
-.pagination > .active > span,
+.pagination > .active > span {
+  background-color: #4481c3;
+  border-color: #4481c3;
+  outline: none;
+}
 .pagination > .active > a:hover,
-.pagination > .active > span:hover,
+.pagination > .active > span:hover {
+  background-color: #7bb3ee;
+  border-color: #4481c3;
+  outline: none;
+}
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   background-color: #4481c3;
-  border-color: #4481c3;
+  border-color: #127ae9;
   outline: none;
 }
 .pagination > li > a,
@@ -2060,6 +2072,18 @@ img {
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
   border-radius: 0 5px 5px 0;
+}
+
+.pagination > .previous.disabled > a,
+.pagination > .next.disabled > a {
+  color: #dfdfdf;
+  cursor: default;
+}
+.pagination > .previous.disabled > a:hover,
+.pagination > .next.disabled > a:hover {
+  color: #dfdfdf;
+  background-color: #fff;
+  cursor: default;
 }
 
 /*# sourceMappingURL=main.css.map */

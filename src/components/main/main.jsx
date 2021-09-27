@@ -27,7 +27,7 @@ function Main() {
                 <section className="cities__places places">
                   <h2 className="visually-hidden">Contacts</h2>
                   <b className="places__found">{filteredContacts.length} contacts in `{activeGroupName}` group</b>
-                  <ContactList contacts={filteredContacts} />
+                  <ContactList items={filteredContacts} />
                 </section>
               </div>
             </div>

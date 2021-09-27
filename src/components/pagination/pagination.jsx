@@ -2,26 +2,17 @@ import React from "react";
 import ReactPaginate from 'react-paginate';
 
 const Pagination = (props) => {
-
-  const handlePageClick = (data) => {
-    let selected = data.selected;
-    let offset = Math.ceil(selected * props.perPage);
-
-    this.setState({offset: offset}, () => {
-      this.loadCommentsFromServer();
-    });
-  };
-
+  const {pageCount, onPageNumberClick} = props;
   return (
     <ReactPaginate
       previousLabel={'previous'}
       nextLabel={'next'}
       breakLabel={'...'}
       breakClassName={'break-me'}
-      pageCount={3}
+      pageCount={pageCount}
       marginPagesDisplayed={2}
-      pageRangeDisplayed={5}
-      onPageChange={handlePageClick}
+      pageRangeDisplayed={3}
+      onPageChange={onPageNumberClick}
       containerClassName={'pagination'}
       activeClassName={'active'}
     />
@@ -29,4 +20,3 @@ const Pagination = (props) => {
 };
 
 export default Pagination;
-
