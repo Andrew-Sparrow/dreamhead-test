@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,24 +7,17 @@ import contactProp from '../contact/contact.prop';
 import Pagination from '../pagination/pagination';
 
 function ContactList(props) {
-  const {items} = props;
-  const ITEMS_PER_PAGE = 3;
-  const selectedItemsOnFirstPage = items.slice(0, ITEMS_PER_PAGE);
-  const pageCount = Math.ceil(items.length / ITEMS_PER_PAGE);
-
-  const [itemsOnPage, setItemsOnPage] = useState(selectedItemsOnFirstPage);
-
-  const pageNumberClickHandler = (dataPagination) => {
-    let offset = Math.ceil(dataPagination.selected * ITEMS_PER_PAGE);
-    console.log(offset);
-    let slicedItems = items.slice(offset, offset + ITEMS_PER_PAGE);
-    setItemsOnPage(slicedItems);
-  };
+  const {
+    items,
+    itemsPerPage,
+    pageCount,
+    pageNumberClickHandler
+  } = props;
 
   return (
     <Fragment>
       <ul className="cities__places-list places__list tabs__content">
-        {itemsOnPage.map((contact) => (
+        {items.map((contact) => (
           <Contact
             key={contact.id}
             id={contact.id}
@@ -38,7 +31,7 @@ function ContactList(props) {
         ))}
       </ul>
       {/* comparison was added to don't show pagination if there are too little amount of items */}
-      {items.length > ITEMS_PER_PAGE && <Pagination pageCount={pageCount} onPageNumberClick={pageNumberClickHandler}/>}
+      {items.length > itemsPerPage && <Pagination pageCount={pageCount} onPageNumberClick={pageNumberClickHandler}/>}
     </ Fragment>
   );
 }
