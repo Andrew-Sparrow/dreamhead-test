@@ -1,8 +1,15 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import ReactPaginate from 'react-paginate';
 
 const Pagination = (props) => {
-  const {pageCount, onPageNumberClick} = props;
+  const {
+    pageCount,
+    onPageNumberClick,
+    forcePage
+  } = props;
+
   return (
     <ReactPaginate
       previousLabel={'previous'}
@@ -15,8 +22,15 @@ const Pagination = (props) => {
       onPageChange={onPageNumberClick}
       containerClassName={'pagination'}
       activeClassName={'active'}
+      forcePage={forcePage}
     />
   );
+};
+
+Pagination.propTypes = {
+  pageCount: PropTypes.number.isRequired,
+  onPageNumberClick: PropTypes.func.isRequired,
+  forcePage: PropTypes.number,
 };
 
 export default Pagination;

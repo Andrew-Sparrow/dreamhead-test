@@ -42,9 +42,6 @@ function ContactList(props) {
   }
 
   const [state, dispatch] = useReducer(reducer, initialPageNumber, init);
-  console.log(prevTabName);
-  console.log(activeTabName);
-  console.log(prevTabName === activeTabName);
 
   useEffect(() => {
     if (prevTabName !== activeTabName) {
@@ -79,8 +76,12 @@ function ContactList(props) {
           />
         ))}
       </ul>
-      {/* comparison was added to don't show pagination if there are too little amount of items */}
-      {items.length > ITEMS_PER_PAGE && <Pagination pageCount={pagesTotalAmount} onPageNumberClick={pageNumberClickHandler}/>}
+      {/* comparison was added to don't show pagination if there are too little amount of items in list */}
+      {items.length > ITEMS_PER_PAGE && <Pagination
+        pageCount={pagesTotalAmount}
+        onPageNumberClick={pageNumberClickHandler}
+        forcePage={state.pageNumber}
+      />}
     </ Fragment>
   );
 }
