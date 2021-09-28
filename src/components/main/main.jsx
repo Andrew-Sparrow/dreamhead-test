@@ -30,6 +30,9 @@ function Main() {
                   <b className="places__found">{filteredContacts.length} contacts in `{activeGroupName}` group</b>
                   <ContactList
                     items={filteredContacts}
+                    // first page number
+                    initialPageNumber={0}
+                    activeTabName={activeGroupName}
                   />
                 </section>
               </div>

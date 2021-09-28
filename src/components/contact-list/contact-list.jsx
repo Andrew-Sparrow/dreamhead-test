@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+// import React, {useState} from 'react';
+import React, {useReducer, useEffect} from 'react';
 import {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,28 +7,66 @@ import Contact from '../contact/contact';
 import contactProp from '../contact/contact.prop';
 import Pagination from '../pagination/pagination';
 
+const FIRST_PAGE_NUMBER = 0; // the initialPageNumber starts with zero
 const ITEMS_PER_PAGE = 3;
+let prevTabName = '';
 
 function ContactList(props) {
   const {
     items,
+    initialPageNumber,
+    activeTabName
   } = props;
 
   const selectedItemsOnFirstPage = items.slice(0, ITEMS_PER_PAGE);
-  const pageCount = Math.ceil(items.length / ITEMS_PER_PAGE);
+  const pagesTotalAmount = Math.ceil(items.length / ITEMS_PER_PAGE);
 
-  const [itemsOnPage, setItemsOnPage] = useState(selectedItemsOnFirstPage);
+  let slicedItems = selectedItemsOnFirstPage;
+
+  const init = (initialPageNumber) => {
+    return {
+      pageNumber: initialPageNumber,
+      slicedItems: slicedItems
+    };
+  }
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case 'changePageNumber':
+        return {...state, pageNumber: action.payload};
+      case 'changeSlicedItems':
+        return {...state, slicedItems: action.payload};
+      default:
+        throw new Error();
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialPageNumber, init);
+  console.log(prevTabName);
+  console.log(activeTabName);
+  console.log(prevTabName === activeTabName);
+
+  useEffect(() => {
+    if (prevTabName !== activeTabName) {
+      dispatch({type: 'changeSlicedItems', payload: []});
+      dispatch({type: 'changeSlicedItems', payload: slicedItems});
+      dispatch({type: 'changePageNumber', payload: FIRST_PAGE_NUMBER});
+    }
+    prevTabName = activeTabName;
+  }, [activeTabName, slicedItems]);
+
 
   const pageNumberClickHandler = (dataPagination) => {
     let offset = Math.ceil(dataPagination.selected * ITEMS_PER_PAGE);
-    let slicedItems = items.slice(offset, offset + ITEMS_PER_PAGE);
-    setItemsOnPage(slicedItems);
+    slicedItems = items.slice(offset, offset + ITEMS_PER_PAGE);
+    dispatch({type: 'changePageNumber', payload: dataPagination.selected});
+    dispatch({type: 'changeSlicedItems', payload: slicedItems});
   };
 
   return (
     <Fragment>
       <ul className="cities__places-list places__list tabs__content">
-        {itemsOnPage.map((contact) => (
+        {state.slicedItems.map((contact) => (
           <Contact
             key={contact.id}
             id={contact.id}
@@ -41,13 +80,15 @@ function ContactList(props) {
         ))}
       </ul>
       {/* comparison was added to don't show pagination if there are too little amount of items */}
-      {items.length > ITEMS_PER_PAGE && <Pagination pageCount={pageCount} onPageNumberClick={pageNumberClickHandler}/>}
+      {items.length > ITEMS_PER_PAGE && <Pagination pageCount={pagesTotalAmount} onPageNumberClick={pageNumberClickHandler}/>}
     </ Fragment>
   );
 }
 
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(contactProp),
+  items: PropTypes.arrayOf(contactProp),
+  initialPageNumber: PropTypes.number,
+  activeTabName: PropTypes.string,
   onListItemHover: PropTypes.func,
 };
 
