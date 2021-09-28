@@ -9,8 +9,7 @@ import LoadingScreen from '../loading-screen/loading-screen';
 import {getIsDataLoaded} from '../../store/contacts/selectors';
 
 function App() {
-  // const isDataLoaded = useSelector(getIsDataLoaded);
-  const isDataLoaded = false;
+  const isDataLoaded = useSelector(getIsDataLoaded);
 
   if (!isDataLoaded) {
     return (
