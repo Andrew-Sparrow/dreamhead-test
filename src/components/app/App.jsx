@@ -6,7 +6,6 @@ import {AppRoute} from '../../const';
 import Main from '../main/main';
 import Error from '../not-found/not-found';
 import LoadingScreen from '../loading-screen/loading-screen';
-// import browserHistory from '../../browser-history';
 import {getIsDataLoaded} from '../../store/contacts/selectors';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
   }
 
   return (
-    // <BrowserRouter history={browserHistory}>
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.MAIN}>
