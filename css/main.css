@@ -435,6 +435,12 @@ img {
   font-size: 20px;
 }
 
+.header__title {
+  font-size: 58px;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
 .header__logo-link {
   margin-bottom: 15px
 }
@@ -612,13 +618,37 @@ img {
 
 .cities__places-list {
   margin-left: -8px;
-  padding-left: 5px
+  padding-left: 5px;
+  margin-bottom: 50px;
 }
 
 .cities__place-card {
   width: 260px;
   margin-left: 8px;
   margin-bottom: 24px
+}
+
+.contact {
+  display: flex;
+  min-width: 330px;
+  border: 5px solid #4481c3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact__left {
+  width: 150px;
+  background-color:rgba(56, 56, 56, 0.1);
+  object-fit: cover;
+}
+
+.contact__right {
+  padding-left: 20px;
+}
+
+.contact__name {
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .page__main--index-empty .cities__right-section {
@@ -749,7 +779,8 @@ img {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 16px 3px 33px
+  padding: 16px 3px 33px;
+  justify-content: center;
 }
 
 .locations__item {
@@ -1987,6 +2018,72 @@ img {
 .header__logo-link:not(.header__logo-link--active):focus,
 .header__logo-link:not(.header__logo-link--active):hover {
   opacity: .5
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  outline: none;
+  padding: 0;
+}
+.pagination > .active > a {
+  background-color: #4481c3;
+  border-color: #4481c3;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 3px solid #4481c3;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination li a:hover {
+  background-color: #69a4e2;
+  color: #fff;
+}
+.pagination > .active > a,
+.pagination > .active > span {
+  background-color: #4481c3;
+  border-color: #4481c3;
+  outline: none;
+}
+.pagination > .active > a:hover,
+.pagination > .active > span:hover {
+  background-color: #7bb3ee;
+  border-color: #4481c3;
+  outline: none;
+}
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #4481c3;
+  border-color: #127ae9;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #4481c3;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: 5px 0 0 5px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: 0 5px 5px 0;
+}
+
+.pagination > .previous.disabled > a,
+.pagination > .next.disabled > a {
+  color: #dfdfdf;
+  cursor: default;
+}
+.pagination > .previous.disabled > a:hover,
+.pagination > .next.disabled > a:hover {
+  color: #dfdfdf;
+  background-color: #fff;
+  cursor: default;
 }
 
 /*# sourceMappingURL=main.css.map */
