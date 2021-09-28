@@ -1,12 +1,12 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Switch, Route, Router as BrowserRouter} from 'react-router-dom';
+import {Switch, Route, HashRouter as BrowserRouter} from 'react-router-dom';
 
 import {AppRoute} from '../../const';
 import Main from '../main/main';
 import Error from '../not-found/not-found';
 import LoadingScreen from '../loading-screen/loading-screen';
-import browserHistory from '../../browser-history';
+// import browserHistory from '../../browser-history';
 import {getIsDataLoaded} from '../../store/contacts/selectors';
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
   }
 
   return (
-    <BrowserRouter history={browserHistory}>
+    // <BrowserRouter history={browserHistory}>
+    <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.MAIN}>
           <Main className="page page--gray page--index" />
